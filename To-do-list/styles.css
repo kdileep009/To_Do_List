@@ -1,0 +1,238 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background:lightblue;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+input[type="text"] {
+    width: 490px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 1rem;
+    max-height: 40px;
+    height: 100%;
+}
+
+/*.inputtext {
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 1rem;
+    max-height: 40px;
+    height: 100%;
+}*/
+
+button {
+    padding: 10px;
+    border: none;
+    background: #5cb85c;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    max-height: 40px;
+    height: 100%;
+    white-space: nowrap;
+}
+
+.incomplete {
+    background-color:rgb(246, 208, 208);
+    border: 1px;
+    border-radius:5px ;
+}
+
+.completed {
+    background-color: rgb(198, 208, 208);
+    border: 1px;
+    border-radius:5px ;
+}
+
+.task-buttons {
+    width: 150px; /* Set a fixed width to maintain consistency */
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.edit, .delete, .complete, .wrong {
+    width: 30px;  /* Fixed width for each button */
+    height: 30px; /* Fixed height for each button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status {
+    width: 100px; /* Fixed width for the status column */
+    text-align: center; /* Center-align text for consistency */
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0; /* Ensures no extra space between cells */
+    width: 100%;
+}
+
+
+
+tr:first-child th:first-child, tr:first-child td:first-child {
+    border-top-left-radius: 20px;
+}
+
+tr:first-child th:last-child, tr:first-child td:last-child {
+    border-top-right-radius: 20px;
+}
+
+tr:last-child th:first-child, tr:last-child td:first-child {
+    border-bottom-left-radius: 20px;
+}
+
+tr:last-child th:last-child, tr:last-child td:last-child {
+    border-bottom-right-radius: 20px;
+}
+
+button:hover {
+    background: #4cae4c;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    text-align: left;
+    padding: 10px;
+    width: 25px;
+    background-color: #f4f4f4;
+}
+
+
+
+tbody tr {
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+.t2,.t3 {
+    padding-left:50px ;
+}
+
+
+td {
+    padding: 10px;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.edit, .delete, .complete, .wrong {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.edit {
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.delete {
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.complete {
+    color: #28a745;
+    border: 1px solid #28a745;
+}
+
+.wrong {
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    display: none;
+}
+
+tbody tr.completed .wrong {
+    display: inline;
+}
+
+tbody tr.completed .complete {
+    display: none;
+}
+
+.status {
+    font-weight: bold;
+}
+
+tbody tr.completed .status {
+    color: #28a745;
+}
+
+tbody tr.incomplete .status {
+    color: #dc3545;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 480px) {
+    form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input[type="text"], button {
+        width: 100%;
+        margin-bottom: 10px; /* Add some margin between input and button */
+    }
+
+    button {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    form {
+        gap: 10px;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 110px); /* Adjust width to allow space for button */
+    }
+
+    button {
+        width: 100px;
+    }
+}
